@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import InputContainer from "./components/inpuTaker/InputContainer";
+import PreviewContainer from "./components/preview/PreviewContainer";
+import React, { useState } from "react";
 
 function App() {
+  const [inputText, SetFirstName] = useState({
+    firstName: "",
+    lastName: "",
+    title: "",
+  });
+
+  const hello = (e) => {
+    let updatedValue = {};
+    if (e.target.name === "fname") {
+      updatedValue = { firstName: e.target.value };
+    } else if (e.target.name === "lname") {
+      updatedValue = { lastName: e.target.value };
+    }
+    else if(e.target.name === "title"){
+      updatedValue = { title: e.target.value };
+    }
+    console.log(updatedValue)
+    SetFirstName({
+      ...inputText,
+      ...updatedValue,
+    });
+    console.log(inputText)
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <InputContainer hello={hello} />
+      <PreviewContainer inputText={inputText} />
     </div>
   );
 }
