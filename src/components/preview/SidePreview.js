@@ -1,7 +1,7 @@
 import React from "react";
 import avatarImage from "../../images/avatar.png";
 
-export default function SidePreview() {
+export default function SidePreview(props) {
   return (
     <div className="side-page">
       <img className="avatar" src={avatarImage}></img>
@@ -13,17 +13,15 @@ export default function SidePreview() {
         <div className="preview-personal-info preview-info">
           <div className="personal-info-container">
             <p className="label">Adress</p>
-            <p className="preview-adress">
-              149 Subhash khand Giri Nagar kalkaji
-            </p>
+            <p className="preview-adress">{props.inputText.adress}</p>
           </div>
           <div className="personal-info-container">
             <p className="label">Phone Number</p>
-            <p className="preview-phone">8800761670</p>
+            <p className="preview-phone"> {props.inputText.phone}</p>
           </div>
           <div className="personal-info-container">
             <p className="label">Email</p>
-            <p className="preview-email">rs20021023@gmail.com</p>
+            <p className="preview-email"> {props.inputText.email}</p>
           </div>
         </div>
       </div>

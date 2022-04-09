@@ -6,7 +6,7 @@ import Personal from "./Personal";
 export default function InputContainer(props) {
   return (
     <div className="main-page page-center">
-      <Personal hello={props.hello} />
+      <Personal inputText = {props.inputText} onChangeHandler={props.onChangeHandler} />
       <Experience />
       <Education />
     </div>

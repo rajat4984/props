@@ -1,14 +1,13 @@
 import React from "react";
 
-export default function MainPreview() {
+export default function MainPreview(props) {
   return (
     <div className="bottom-main-page">
       <div className="preview-desc-container  preview-container">
         <h4 className="preview-desc-heading preview-heading">Descrption</h4>
         <hr></hr>
         <p className="preview-desc-info preview-info">
-          Hello my name is rajat sharma i am a software developer i have made
-          this app
+          {props.inputText.desc}
         </p>
       </div>
 
