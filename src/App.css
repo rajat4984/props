@@ -54,6 +54,10 @@ body {
   background-color: var(--myLightBlue);
 }
 
+.main-page-item{
+  background-color: red;
+}
+
 .page-center {
   position: absolute;
   top: 50%;
@@ -63,7 +67,7 @@ body {
 }
 
 .container {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 /* ---------------PERSONAL-INFORMATION---------------------- */
