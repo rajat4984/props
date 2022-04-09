@@ -14,6 +14,11 @@ function App() {
     phone: "",
     email: "",
     desc: "",
+    expPosition: "",
+    expCompany: "",
+    expCity: "",
+    expFrom: "",
+    expTo: "",
   });
 
   const onChangeHandler = (e) => {
@@ -28,6 +33,11 @@ function App() {
     else if (name === "phone") updatedValue = { phone: value };
     else if (name === "email") updatedValue = { email: value };
     else if (name === "desc") updatedValue = { desc: value };
+    else if (name === "expPosition") updatedValue = { expPosition: value };
+    else if (name === "expCompany") updatedValue = { expCompany: value };
+    else if (name === "expCity") updatedValue = { expCity: value };
+    else if (name === "expFrom") updatedValue = { expFrom: value };
+    else if (name === "expTo") updatedValue = { expTo: value };
 
     console.log(updatedValue);
     SetFirstName({
@@ -38,9 +48,6 @@ function App() {
     console.log(inputText);
   };
 
-  const handler = (e) => {
-    console.log("hello");
-  };
   return (
     <div>
       <Navbar brand="CV-MAKER" />

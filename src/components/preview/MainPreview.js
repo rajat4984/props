@@ -17,24 +17,17 @@ export default function MainPreview(props) {
         </h4>
         <hr></hr>
         <div className="preview-experience-info">
-          <div className="dates">2010 - 2011</div>
+          <div className="dates">{props.inputText.expFrom} - {props.inputText.expTo}</div>
           <div className="experience-info">
-            <div className="position">Software Developer</div>
-            <div className="company-name">Tata Consultency Services</div>
-          </div>
-        </div>
-        <div className="preview-experience-info">
-          <div className="dates">2010 - 2011</div>
-          <div className="experience-info">
-            <div className="position">Software Developer</div>
-            <div className="company-name">Tata Consultency Services</div>
+            <div className="position">{props.inputText.expPosition}</div>
+            <div className="company-name">{props.inputText.expCompany}</div>
           </div>
         </div>
       </div>
 
       <div className="preview-education-container  preview-container">
         <h4 className="preview-education-heading preview-heading">
-          Experience
+          Education
         </h4>
         <hr></hr>
         <div className="preview-education-info">

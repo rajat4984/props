@@ -6,8 +6,14 @@ import Personal from "./Personal";
 export default function InputContainer(props) {
   return (
     <div className="main-page page-center">
-      <Personal inputText = {props.inputText} onChangeHandler={props.onChangeHandler} />
-      <Experience />
+      <Personal
+        inputText={props.inputText}
+        onChangeHandler={props.onChangeHandler}
+      />
+      <Experience
+        inputText={props.inputText}
+        onChangeHandler={props.onChangeHandler}
+      />
       <Education />
     </div>
   );
