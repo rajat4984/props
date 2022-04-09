@@ -1,4 +1,206 @@
-body{
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+:root {
+  --myDarkBlue: #1a374d;
+  --myLightBlue: #406882;
+  --myLightPurple: #ab98c6;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background-color: var(--myDarkBlue);
   color: white;
-  background-color: rgb(41, 39, 39);
+}
+
+/* ------------------NAVBAR----------------------------- */
+
+.navbar {
+  background-color: var(--myLightBlue);
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.brand {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 0.2em;
+}
+
+.preview-link {
+  text-decoration: none;
+  transition: 0.3s;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.5em;
+}
+
+.preview-link:hover,
+.brand:hover {
+  background-color: var(--myDarkBlue);
+  color: white(27, 27, 27);
+  border-radius: 5px;
+}
+
+/* --------------------MAIN-PAGE--------------------- */
+
+.main-page {
+  padding-left: 2em;
+  background-color: var(--myLightBlue);
+}
+
+.page-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  width: 50%;
+}
+
+.container {
+  margin-bottom: 1em;
+}
+
+/* ---------------PERSONAL-INFORMATION---------------------- */
+.inputs-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: flex-start;
+}
+
+.input {
+  width: 30em;
+  height: 2em;
+  margin: 0.5em 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  text-indent: 0.5em;
+}
+
+.text-area {
+  height: 5em;
+}
+
+.heading {
+  font-size: 1.5rem;
+  padding: 0.7em 0;
+}
+
+/* --------------------EEXPERIENCE-------------------- */
+.info-btn {
+  width: 30%;
+  background-color: var(--myLightBlue);
+  transition: 0.3s;
+  cursor: pointer;
+  border: 1px solid var(--myDarkBlue);
+  color: white;
+  text-align: center;
+}
+
+.info-btn:hover {
+  color: white;
+  background-color: var(--myDarkBlue);
+  border: 1px solid black;
+}
+
+/* ------------------------PREVIEW-PAGE---------------- */
+.preview-header {
+  font-size: 1.3rem;
+  padding: 1em;
+  background-color: var(--myLightBlue);
+  width: 120%;
+}
+.preview-name {
+  margin-bottom: 0.5em;
+}
+
+.preview-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -10%);
+  width: 50%;
+}
+
+/* -----------BOTTOM-PAGE---------------- */
+.bottom-page {
+  display: flex;
+  width: 126%;
+}
+
+.bottom-main-page {
+  flex-basis: 80%;
+  background-color: #4c7585;
+  padding: 0 1.3em;
+}
+
+.preview-container {
+  margin: 2em 0;
+}
+
+.preview-info,
+.preview-heading,
+hr,
+.experience-info > div,
+.education-info > div {
+  margin-bottom: 0.4em;
+}
+
+hr {
+  height: 1px;
+  background-color: rgba(228, 228, 228, 0.705);
+  border: none;
+}
+
+/* -----------EXPERIENCE-PREVIEW----------------- */
+
+.preview-experience-info,
+.preview-education-info {
+  display: flex;
+  margin-bottom: 0.7em;
+}
+
+.position {
+  font-weight: bold;
+}
+
+.dates {
+  flex-basis: 30%;
+  font-weight: bold;
+}
+
+.side-page {
+  flex-basis: 30%;
+}
+
+/* --------------------EDUCATION-------------- */
+.preview-institute {
+  font-weight: bold;
+}
+
+/* --------------------SIDE-PAGE-------------------- */
+.side-page {
+  background-color: rgb(113, 161, 190);
+  padding: 1em 0.5em;
+}
+
+.avatar {
+  width: 90%;
+  padding: 1em 0.5em;
+}
+
+.label {
+  padding-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.personal-info-container {
+  padding: 0.5em 0;
 }

@@ -2,6 +2,8 @@ import "./App.css";
 import InputContainer from "./components/inpuTaker/InputContainer";
 import PreviewContainer from "./components/preview/PreviewContainer";
 import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [inputText, SetFirstName] = useState({
@@ -16,21 +18,23 @@ function App() {
       updatedValue = { firstName: e.target.value };
     } else if (e.target.name === "lname") {
       updatedValue = { lastName: e.target.value };
-    }
-    else if(e.target.name === "title"){
+    } else if (e.target.name === "title") {
       updatedValue = { title: e.target.value };
     }
-    console.log(updatedValue)
+    console.log(updatedValue);
     SetFirstName({
       ...inputText,
       ...updatedValue,
     });
-    console.log(inputText)
+    console.log(inputText);
   };
   return (
     <div>
-      <InputContainer hello={hello} />
-      <PreviewContainer inputText={inputText} />
+      <Navbar brand="CV-MAKER" />
+      <Routes>
+        <Route path="/" element={<InputContainer />} />
+        <Route path="PreviewContainer" element={<PreviewContainer />} />
+      </Routes>
     </div>
   );
 }
