@@ -10,11 +10,24 @@ export default function InputContainer(props) {
         inputText={props.inputText}
         onChangeHandler={props.onChangeHandler}
       />
-      <Experience
-        inputText={props.inputText}
-        onChangeHandler={props.onChangeHandler}
-      />
-      <Education />
+      {props.experienceArray.map(() => {
+        return (
+          <Experience
+            inputText={props.inputText}
+            onChangeHandler={props.onChangeHandler}
+            experienceHandler={props.experienceHandler}
+          />
+        );
+      })}
+      {props.educationArray.map(() => {
+        return (
+          <Education
+            educationHandler={props.educationHandler}
+            inputText={props.inputText}
+            onChangeHandler={props.onChangeHandler}
+          />
+        );
+      })}
     </div>
   );
 }

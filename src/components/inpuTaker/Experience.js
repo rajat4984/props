@@ -40,7 +40,7 @@ export default function Experience(props) {
           onChange={props.onChangeHandler}
           name="expTo"
         ></input>
-        <button className=" input info-btn">Add</button>
+        <button className=" input info-btn" onClick={props.experienceHandler}>Add</button>
         <button className=" input info-btn">Delete</button>
       </div>
     </div>

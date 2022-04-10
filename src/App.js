@@ -4,9 +4,10 @@ import PreviewContainer from "./components/preview/PreviewContainer";
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
+import Education from "./components/inpuTaker/Education";
 
 function App() {
-  const [inputText, SetFirstName] = useState({
+  const [inputText, setFirstName] = useState({
     firstName: "",
     lastName: "",
     title: "",
@@ -19,7 +20,16 @@ function App() {
     expCity: "",
     expFrom: "",
     expTo: "",
+    uni: "",
+    eduCity: "",
+    degree: "",
+    subject: "",
+    eduFrom: "",
+    eduTo: "",
   });
+
+  const [educationArray, setEducationArray] = useState(["newElement"]);
+  const [experienceArray, setExperienceArry] = useState(["newElement"]);
 
   const onChangeHandler = (e) => {
     let updatedValue = {};
@@ -38,14 +48,33 @@ function App() {
     else if (name === "expCity") updatedValue = { expCity: value };
     else if (name === "expFrom") updatedValue = { expFrom: value };
     else if (name === "expTo") updatedValue = { expTo: value };
+    else if (name === "uni") updatedValue = { uni: value };
+    else if (name === "eduCity") updatedValue = { eduCity: value };
+    else if (name === "degree") updatedValue = { degree: value };
+    else if (name === "subject") updatedValue = { subject: value };
+    else if (name === "eduFrom") updatedValue = { eduFrom: value };
+    else if (name === "eduTo") updatedValue = { eduTo: value };
 
-    console.log(updatedValue);
-    SetFirstName({
+    setFirstName({
       ...inputText,
       ...updatedValue,
     });
-    console.log("IN on changeHandler");
-    console.log(inputText);
+  };
+
+  const educationElementHandler = () => {
+    const updatedArray = ["newElement"];
+    setEducationArray(() => {
+      const list = [...educationArray, ...updatedArray];
+      return list;
+    });
+  };
+
+  const experienceHandler = () => {
+    const updatedArray = ["newElement"];
+    setExperienceArry(() => {
+      const list = [...experienceArray, ...updatedArray];
+      return list;
+    });
   };
 
   return (
@@ -56,14 +85,24 @@ function App() {
           path="/"
           element={
             <InputContainer
+              educationHandler={educationElementHandler}
               inputText={inputText}
               onChangeHandler={onChangeHandler}
+              educationArray={educationArray}
+              experienceArray={experienceArray}
+              experienceHandler={experienceHandler}
             />
           }
         />
         <Route
           path="PreviewContainer"
-          element={<PreviewContainer inputText={inputText} />}
+          element={
+            <PreviewContainer
+              inputText={inputText}
+              educationArray={educationArray}
+              experienceArray={experienceArray}
+            />
+          }
         />
       </Routes>
     </div>

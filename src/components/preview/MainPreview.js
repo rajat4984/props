@@ -1,4 +1,5 @@
 import React from "react";
+import ExperiencePreview from "./ExperiencePreview";
 
 export default function MainPreview(props) {
   return (
@@ -16,13 +17,10 @@ export default function MainPreview(props) {
           Experience
         </h4>
         <hr></hr>
-        <div className="preview-experience-info">
-          <div className="dates">{props.inputText.expFrom} - {props.inputText.expTo}</div>
-          <div className="experience-info">
-            <div className="position">{props.inputText.expPosition}</div>
-            <div className="company-name">{props.inputText.expCompany}</div>
-          </div>
-        </div>
+        {props.experienceArray.map(()=>{
+          <ExperiencePreview inputText={props.inputText}/>
+        })}
+        
       </div>
 
       <div className="preview-education-container  preview-container">
@@ -31,23 +29,13 @@ export default function MainPreview(props) {
         </h4>
         <hr></hr>
         <div className="preview-education-info">
-          <div className="dates">2010 - 2011</div>
+          <div className="dates">{props.inputText.eduFrom} - {props.inputText.eduTo}</div>
           <div className="education-info">
             <div className="preview-institute">
-              Guru Harikrishan Public school
+            {props.inputText.uni}
             </div>
-            <div className="preview-degree">Degree: BCA</div>
-            <div className="preview-subject">Computer Science</div>
-          </div>
-        </div>
-        <div className="preview-education-info">
-          <div className="dates">2010 - 2011</div>
-          <div className="education-info">
-            <div className="preview-institute">
-              Guru Harikrishan Public school
-            </div>
-            <div className="preview-degree">Degree: BCA</div>
-            <div className="preview-subject">Computer Science</div>
+            <div className="preview-degree">Degree: {props.inputText.degree}</div>
+            <div className="preview-subject">{props.inputText.subject}</div>
           </div>
         </div>
       </div>
