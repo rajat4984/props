@@ -10,21 +10,27 @@ export default function InputContainer(props) {
         inputText={props.inputText}
         onChangeHandler={props.onChangeHandler}
       />
+      <h3 className="heading">Experience</h3>
       {props.experienceArray.map(() => {
         return (
           <Experience
             inputText={props.inputText}
+            elementDeleteHandler={props.elementDeleteHandler}
             onChangeHandler={props.onChangeHandler}
-            experienceHandler={props.experienceHandler}
+            elementAddHandler={props.elementAddHandler}
+            experienceArray={props.experienceArray}
           />
         );
       })}
+      <h3 className="heading">Education</h3>
       {props.educationArray.map(() => {
         return (
           <Education
-            educationHandler={props.educationHandler}
+            elementDeleteHandler={props.elementDeleteHandler}
+            elementAddHandler={props.elementAddHandler}
             inputText={props.inputText}
             onChangeHandler={props.onChangeHandler}
+            educationArray = {props.educationArray}
           />
         );
       })}

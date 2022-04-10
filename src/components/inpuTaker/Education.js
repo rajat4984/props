@@ -3,7 +3,6 @@ import React from "react";
 export default function Education(props) {
   return (
     <div className="education-info-container container">
-      <h3 className="heading">Education</h3>
       <div className="inputs-container">
         <input
           className="input"
@@ -47,8 +46,21 @@ export default function Education(props) {
           onChange={props.onChangeHandler}
           name="eduTo"
         ></input>
-        <button className="input info-btn" onClick={props.educationHandler}>Add</button>
-        <button className="input info-btn">Delete</button>
+        <button
+          className="input info-btn"
+          name="eduAddBtn"
+          onClick={props.elementAddHandler}
+        >
+          Add
+        </button>
+        <button
+          className="input info-btn"
+          name="eduDeleteBtn"
+          onClick={props.elementDeleteHandler}
+          disabled={props.educationArray.length < 2 ? true : false}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

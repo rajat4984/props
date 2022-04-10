@@ -3,7 +3,6 @@ import React from "react";
 export default function Experience(props) {
   return (
     <div className="experience-info-container container">
-      <h3 className="heading">Experience</h3>
       <div className="inputs-container">
         <input
           className="input"
@@ -40,8 +39,21 @@ export default function Experience(props) {
           onChange={props.onChangeHandler}
           name="expTo"
         ></input>
-        <button className=" input info-btn" onClick={props.experienceHandler}>Add</button>
-        <button className=" input info-btn">Delete</button>
+        <button
+          className=" input info-btn"
+          name="expAddBtn"
+          onClick={props.elementAddHandler}
+        >
+          Add
+        </button>
+        <button
+          className=" input info-btn"
+          name="expDeleteBtn"
+          onClick={props.elementDeleteHandler}
+          disabled={props.experienceArray.length < 2 ? true : false}
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

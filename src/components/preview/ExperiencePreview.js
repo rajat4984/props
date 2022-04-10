@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function ExperiencePreview(props) {
-    console.log("IN experience preivew")
-    console.log(props)
   return (
     <div className="preview-experience-info">
       <div className="dates">

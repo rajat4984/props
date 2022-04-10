@@ -61,20 +61,39 @@ function App() {
     });
   };
 
-  const educationElementHandler = () => {
-    const updatedArray = ["newElement"];
-    setEducationArray(() => {
-      const list = [...educationArray, ...updatedArray];
-      return list;
-    });
+  const elementAddHandler = (e) => {
+    if (e.target.name === "eduAddBtn") {
+      const updatedArray = ["newElement"];
+      setEducationArray(() => {
+        const list = [...educationArray, ...updatedArray];
+        return list;
+      });
+    } else if (e.target.name === "expAddBtn") {
+      const updatedArray = ["newElement"];
+      setExperienceArry(() => {
+        const list = [...experienceArray, ...updatedArray];
+        return list;
+      });
+    }
   };
 
-  const experienceHandler = () => {
-    const updatedArray = ["newElement"];
-    setExperienceArry(() => {
-      const list = [...experienceArray, ...updatedArray];
-      return list;
-    });
+  const elementDeleteHandler = (e) => {
+    if (e.target.name === "eduDeleteBtn") {
+      const tempArray = [...educationArray];
+      tempArray.pop();
+      setEducationArray(() => {
+        const list = [...tempArray];
+        return list;
+      });
+    } else if (e.target.name === "expDeleteBtn") {
+      console.log("BUtton clicked")
+      const tempArray = [...experienceArray];
+      tempArray.pop();
+      setExperienceArry(() => {
+        const list = [...tempArray];
+        return list;
+      });
+    }
   };
 
   return (
@@ -85,12 +104,12 @@ function App() {
           path="/"
           element={
             <InputContainer
-              educationHandler={educationElementHandler}
+              elementAddHandler={elementAddHandler}
+              elementDeleteHandler={elementDeleteHandler}
               inputText={inputText}
               onChangeHandler={onChangeHandler}
               educationArray={educationArray}
               experienceArray={experienceArray}
-              experienceHandler={experienceHandler}
             />
           }
         />
