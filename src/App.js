@@ -36,24 +36,7 @@ function App() {
     let name = e.target.name;
     let value = e.target.value;
 
-    if (name === "fname") updatedValue = { firstName: e.target.value };
-    else if (name === "lname") updatedValue = { lastName: value };
-    else if (name === "title") updatedValue = { title: value };
-    else if (name === "adress") updatedValue = { adress: value };
-    else if (name === "phone") updatedValue = { phone: value };
-    else if (name === "email") updatedValue = { email: value };
-    else if (name === "desc") updatedValue = { desc: value };
-    else if (name === "expPosition") updatedValue = { expPosition: value };
-    else if (name === "expCompany") updatedValue = { expCompany: value };
-    else if (name === "expCity") updatedValue = { expCity: value };
-    else if (name === "expFrom") updatedValue = { expFrom: value };
-    else if (name === "expTo") updatedValue = { expTo: value };
-    else if (name === "uni") updatedValue = { uni: value };
-    else if (name === "eduCity") updatedValue = { eduCity: value };
-    else if (name === "degree") updatedValue = { degree: value };
-    else if (name === "subject") updatedValue = { subject: value };
-    else if (name === "eduFrom") updatedValue = { eduFrom: value };
-    else if (name === "eduTo") updatedValue = { eduTo: value };
+    updatedValue = { [name]: value };
 
     setFirstName({
       ...inputText,
@@ -86,7 +69,7 @@ function App() {
         return list;
       });
     } else if (e.target.name === "expDeleteBtn") {
-      console.log("BUtton clicked")
+      console.log("BUtton clicked");
       const tempArray = [...experienceArray];
       tempArray.pop();
       setExperienceArry(() => {

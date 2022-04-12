@@ -10,14 +10,14 @@ export default function Personal(props) {
           placeholder="First Name"
           value={props.inputText.firstName}
           onChange={props.onChangeHandler}
-          name="fname"
+          name="firstName"
         ></input>
         <input
           className="input"
           placeholder="Last Name"
           value={props.inputText.lastName}
           onChange={props.onChangeHandler}
-          name="lname"
+          name="lastName"
         ></input>
         <input
           className="input"
