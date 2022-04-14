@@ -3,39 +3,39 @@ import React from "react";
 export default function Experience(props) {
   return (
     <div className="experience-info-container container">
-      <div className="inputs-container">
+      <div className="inputs-container" id={props.id}>
         <input
           className="input"
           placeholder="Position"
-          value={props.inputText.expPosition}
+          value={props.stateArray.expPosition}
           onChange={props.onChangeHandler}
           name="expPosition"
         ></input>
         <input
           className="input"
           placeholder="Company"
-          value={props.inputText.expCompany}
+          value={props.stateArray.expCompany}
           onChange={props.onChangeHandler}
           name="expCompany"
         ></input>
         <input
           className="input"
           placeholder="City"
-          value={props.inputText.expCity}
+          value={props.stateArray.expCity}
           onChange={props.onChangeHandler}
           name="expCity"
         ></input>
         <input
           className="input"
           placeholder="From"
-          value={props.inputText.expFrom}
+          value={props.stateArray.expFrom}
           onChange={props.onChangeHandler}
           name="expFrom"
         ></input>
         <input
           className="input"
           placeholder="To"
-          value={props.inputText.expTo}
+          value={props.stateArray.expTo}
           onChange={props.onChangeHandler}
           name="expTo"
         ></input>

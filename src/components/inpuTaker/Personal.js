@@ -4,25 +4,25 @@ export default function Personal(props) {
   return (
     <div className="personal-info-container container">
       <h3 className="heading">Personal Information</h3>
-      <div className="inputs-container">
+      <div className="inputs-container" id={0} >
         <input
           className="input"
           placeholder="First Name"
-          value={props.inputText.firstName}
+          value={props.stateArray[0].firstName}
           onChange={props.onChangeHandler}
           name="firstName"
         ></input>
         <input
           className="input"
           placeholder="Last Name"
-          value={props.inputText.lastName}
+          value={props.stateArray[0].lastName}
           onChange={props.onChangeHandler}
           name="lastName"
         ></input>
         <input
           className="input"
           placeholder="Title"
-          value={props.inputText.title}
+          value={props.stateArray[0].title}
           onChange={props.onChangeHandler}
           name="title"
         ></input>
@@ -33,14 +33,14 @@ export default function Personal(props) {
         <input
           className="input"
           placeholder="Adress"
-          value={props.inputText.adress}
+          value={props.stateArray[0].adress}
           onChange={props.onChangeHandler}
           name="adress"
         ></input>
         <input
           className="input"
           placeholder="Phone number"
-          value={props.inputText.phone}
+          value={props.stateArray[0].phone}
           onChange={props.onChangeHandler}
           name="phone"
         ></input>
@@ -48,14 +48,14 @@ export default function Personal(props) {
           className="input"
           placeholder="Email"
           type="email"
-          value={props.inputText.email}
+          value={props.stateArray[0].email}
           onChange={props.onChangeHandler}
           name="email"
         ></input>
         <textarea
           className="text-area input"
           placeholder="Description"
-          value={props.inputText.desc}
+          value={props.stateArray[0].desc}
           onChange={props.onChangeHandler}
           name="desc"
         ></textarea>

@@ -4,10 +4,9 @@ import PreviewContainer from "./components/preview/PreviewContainer";
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
-import Education from "./components/inpuTaker/Education";
 
 function App() {
-  const [inputText, setFirstName] = useState({
+  const [inputText, setInputText] = useState({
     firstName: "",
     lastName: "",
     title: "",
@@ -28,20 +27,27 @@ function App() {
     eduTo: "",
   });
 
+  const [stateArray, setStateArray] = useState([inputText]);
+
   const [educationArray, setEducationArray] = useState(["newElement"]);
   const [experienceArray, setExperienceArry] = useState(["newElement"]);
 
   const onChangeHandler = (e) => {
+    console.log("Id")
+    console.log(e.target.parentNode.id)
     let updatedValue = {};
     let name = e.target.name;
     let value = e.target.value;
 
     updatedValue = { [name]: value };
 
-    setFirstName({
-      ...inputText,
-      ...updatedValue,
-    });
+    let targetState = stateArray[e.target.parentNode.id];
+    setStateArray([
+      {
+        ...targetState,
+        ...updatedValue,
+      },
+    ]);
   };
 
   const elementAddHandler = (e) => {
@@ -51,6 +57,7 @@ function App() {
         const list = [...educationArray, ...updatedArray];
         return list;
       });
+      setStateArray([...stateArray, inputText]);
     } else if (e.target.name === "expAddBtn") {
       const updatedArray = ["newElement"];
       setExperienceArry(() => {
@@ -88,6 +95,7 @@ function App() {
           element={
             <InputContainer
               elementAddHandler={elementAddHandler}
+              stateArray={stateArray}
               elementDeleteHandler={elementDeleteHandler}
               inputText={inputText}
               onChangeHandler={onChangeHandler}
@@ -101,6 +109,7 @@ function App() {
           element={
             <PreviewContainer
               inputText={inputText}
+              stateArray={stateArray}
               educationArray={educationArray}
               experienceArray={experienceArray}
             />

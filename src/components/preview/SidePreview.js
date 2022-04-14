@@ -13,15 +13,15 @@ export default function SidePreview(props) {
         <div className="preview-personal-info preview-info">
           <div className="personal-info-container">
             <p className="label">Adress</p>
-            <p className="preview-adress">{props.inputText.adress}</p>
+            <p className="preview-adress">{props.stateArray[0].adress}</p>
           </div>
           <div className="personal-info-container">
             <p className="label">Phone Number</p>
-            <p className="preview-phone"> {props.inputText.phone}</p>
+            <p className="preview-phone"> {props.stateArray[0].phone}</p>
           </div>
           <div className="personal-info-container">
             <p className="label">Email</p>
-            <p className="preview-email"> {props.inputText.email}</p>
+            <p className="preview-email"> {props.stateArray[0].email}</p>
           </div>
         </div>
       </div>

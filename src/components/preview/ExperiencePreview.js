@@ -4,11 +4,11 @@ export default function ExperiencePreview(props) {
   return (
     <div className="preview-experience-info">
       <div className="dates">
-        {props.inputText.expFrom} - {props.inputText.expTo}
+        {props.stateArray.expFrom} - {props.stateArray.expTo}
       </div>
       <div className="experience-info">
-        <div className="position">{props.inputText.expPosition}</div>
-        <div className="company-name">{props.inputText.expCompany}</div>
+        <div className="position">{props.stateArray.expPosition}</div>
+        <div className="company-name">{props.stateArray.expCompany}</div>
       </div>
     </div>
   );

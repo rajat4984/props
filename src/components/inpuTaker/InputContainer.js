@@ -7,14 +7,17 @@ export default function InputContainer(props) {
   return (
     <div className="main-page page-center">
       <Personal
+        stateArray={props.stateArray}
         inputText={props.inputText}
         onChangeHandler={props.onChangeHandler}
       />
       <h3 className="heading">Experience</h3>
-      {props.experienceArray.map(() => {
+      {props.experienceArray.map((el, i) => {
         return (
           <Experience
+            id={i}
             inputText={props.inputText}
+            stateArray={props.stateArray[i]}
             elementDeleteHandler={props.elementDeleteHandler}
             onChangeHandler={props.onChangeHandler}
             elementAddHandler={props.elementAddHandler}
@@ -23,14 +26,16 @@ export default function InputContainer(props) {
         );
       })}
       <h3 className="heading">Education</h3>
-      {props.educationArray.map(() => {
+      {props.educationArray.map((el, i) => {
+        console.log(i);
         return (
           <Education
+            id={i}
+            stateArray={props.stateArray[i]}
             elementDeleteHandler={props.elementDeleteHandler}
             elementAddHandler={props.elementAddHandler}
-            inputText={props.inputText}
             onChangeHandler={props.onChangeHandler}
-            educationArray = {props.educationArray}
+            educationArray={props.educationArray}
           />
         );
       })}

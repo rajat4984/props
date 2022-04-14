@@ -3,13 +3,14 @@ import EducationPreview from "./EducationPreview";
 import ExperiencePreview from "./ExperiencePreview";
 
 export default function MainPreview(props) {
-  console.log(props);
   return (
     <div className="bottom-main-page">
       <div className="preview-desc-container  preview-container">
         <h4 className="preview-desc-heading preview-heading">Descrption</h4>
         <hr></hr>
-        <p className="preview-desc-info preview-info">{props.inputText.desc}</p>
+        <p className="preview-desc-info preview-info">
+          {props.stateArray[0].desc}
+        </p>
       </div>
 
       <div className="preview-experience-container  preview-container">
@@ -17,18 +18,17 @@ export default function MainPreview(props) {
           Experience
         </h4>
         <hr></hr>
-        {props.experienceArray.map(() => {
-          return <ExperiencePreview inputText={props.inputText} />;
+        {props.experienceArray.map((el,i) => {
+          return <ExperiencePreview stateArray={props.stateArray[i]} />;
         })}
       </div>
 
       <div className="preview-education-container  preview-container">
         <h4 className="preview-education-heading preview-heading">Education</h4>
         <hr></hr>
-        {props.educationArray.map(()=>{
-          return(
-            <EducationPreview inputText = {props.inputText}/>
-          )
+        {props.educationArray.map((el,i) => {
+          console.log(i)
+          return <EducationPreview stateArray={props.stateArray[i]} />;
         })}
       </div>
     </div>
