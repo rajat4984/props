@@ -3,49 +3,49 @@ import React from "react";
 export default function Education(props) {
   return (
     <div className="education-info-container container">
-      <div className="inputs-container" id={props.id}>
+      <div className="inputs-container">
         <input
           className="input"
           placeholder="University name"
           value={props.stateArray.uni}
-          onChange={props.onChangeHandler}
+          onChange={event => props.onChangeHandler(props.id,event)}
           name="uni"
-        ></input>
+        />
         <input
           className="input"
           placeholder="City"
           value={props.stateArray.eduCity}
-          onChange={props.onChangeHandler}
+          onChange={event => props.onChangeHandler(props.id,event)}
           name="eduCity"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Degree"
           value={props.stateArray.degree}
-          onChange={props.onChangeHandler}
+          onChange={event => props.onChangeHandler(props.id,event)}
           name="degree"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Subject"
           value={props.stateArray.subject}
-          onChange={props.onChangeHandler}
+          onChange={event => props.onChangeHandler(props.id,event)}
           name="subject"
-        ></input>
+        />
         <input
           className="input"
           placeholder="From"
           value={props.stateArray.eduFrom}
-          onChange={props.onChangeHandler}
+          onChange={event => props.onChangeHandler(props.id,event)}
           name="eduFrom"
-        ></input>
+        />
         <input
           className="input"
           placeholder="To"
           value={props.stateArray.eduTo}
-          onChange={props.onChangeHandler}
+          onChange={event => props.onChangeHandler(props.id,event)}
           name="eduTo"
-        ></input>
+        />
         <button
           className="input info-btn"
           name="eduAddBtn"

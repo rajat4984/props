@@ -27,7 +27,6 @@ export default function MainPreview(props) {
         <h4 className="preview-education-heading preview-heading">Education</h4>
         <hr></hr>
         {props.educationArray.map((el,i) => {
-          console.log(i)
           return <EducationPreview stateArray={props.stateArray[i]} />;
         })}
       </div>

@@ -2,9 +2,10 @@ import React from "react";
 import avatarImage from "../../images/avatar.png";
 
 export default function SidePreview(props) {
+  console.log(props)
   return (
     <div className="side-page">
-      <img className="avatar" src={avatarImage}></img>
+      <img className="avatar" src={props.imageUrl.profileImage}></img>
       <div className="preview-personal-container  preview-container">
         <h4 className="preview-personal-heading preview-heading">
           Presonal details

@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function EducationPreview(props) {
-  console.log("education")
-  console.log(props)
   return (
     <div className="preview-education-info">
       <div className="dates">

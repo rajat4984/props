@@ -14,7 +14,7 @@ export default function PreviewContainer(props) {
           experienceArray={props.experienceArray}
           inputText={props.inputText}
         />
-        <SidePreview stateArray={props.stateArray} />
+        <SidePreview stateArray={props.stateArray} imageUrl={props.imageUrl} />
       </div>
     </div>
   );

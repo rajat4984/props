@@ -4,59 +4,56 @@ export default function Personal(props) {
   return (
     <div className="personal-info-container container">
       <h3 className="heading">Personal Information</h3>
-      <div className="inputs-container" id={0} >
+      <div className="inputs-container">
         <input
           className="input"
           placeholder="First Name"
           value={props.stateArray[0].firstName}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="firstName"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Last Name"
           value={props.stateArray[0].lastName}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="lastName"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Title"
           value={props.stateArray[0].title}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="title"
-        ></input>
-        <input
-          className="input"
-          placeholder="Photo"
-        ></input>
+        />
+        <input className="input" placeholder="Photo" type="file" onChange={props.imageChangeHandler}/>
         <input
           className="input"
           placeholder="Adress"
           value={props.stateArray[0].adress}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="adress"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Phone number"
           value={props.stateArray[0].phone}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="phone"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Email"
           type="email"
           value={props.stateArray[0].email}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="email"
-        ></input>
+        />
         <textarea
           className="text-area input"
           placeholder="Description"
           value={props.stateArray[0].desc}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="desc"
         ></textarea>
       </div>

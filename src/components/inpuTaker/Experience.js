@@ -3,42 +3,42 @@ import React from "react";
 export default function Experience(props) {
   return (
     <div className="experience-info-container container">
-      <div className="inputs-container" id={props.id}>
+      <div className="inputs-container">
         <input
           className="input"
           placeholder="Position"
           value={props.stateArray.expPosition}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="expPosition"
-        ></input>
+        />
         <input
           className="input"
           placeholder="Company"
           value={props.stateArray.expCompany}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="expCompany"
-        ></input>
+        />
         <input
           className="input"
           placeholder="City"
           value={props.stateArray.expCity}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="expCity"
-        ></input>
+        />
         <input
           className="input"
           placeholder="From"
           value={props.stateArray.expFrom}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="expFrom"
-        ></input>
+        />
         <input
           className="input"
           placeholder="To"
           value={props.stateArray.expTo}
-          onChange={props.onChangeHandler}
+          onChange={(event) => props.onChangeHandler(props.id, event)}
           name="expTo"
-        ></input>
+        />
         <button
           className=" input info-btn"
           name="expAddBtn"

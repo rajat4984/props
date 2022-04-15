@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [inputText, setInputText] = useState({
+  const stateObject = {
     firstName: "",
     lastName: "",
     title: "",
@@ -25,29 +25,17 @@ function App() {
     subject: "",
     eduFrom: "",
     eduTo: "",
-  });
+  };
 
-  const [stateArray, setStateArray] = useState([inputText]);
-
+  const [stateArray, setStateArray] = useState([stateObject]);
+  const [imageUrl, setImageUrl] = useState({profileImage:"../../images/avatar.png"});
   const [educationArray, setEducationArray] = useState(["newElement"]);
   const [experienceArray, setExperienceArry] = useState(["newElement"]);
 
-  const onChangeHandler = (e) => {
-    console.log("Id")
-    console.log(e.target.parentNode.id)
-    let updatedValue = {};
-    let name = e.target.name;
-    let value = e.target.value;
-
-    updatedValue = { [name]: value };
-
-    let targetState = stateArray[e.target.parentNode.id];
-    setStateArray([
-      {
-        ...targetState,
-        ...updatedValue,
-      },
-    ]);
+  const onChangeHandler = (index, event) => {
+    const values = [...stateArray];
+    values[index][event.target.name] = event.target.value;
+    setStateArray(values);
   };
 
   const elementAddHandler = (e) => {
@@ -57,13 +45,14 @@ function App() {
         const list = [...educationArray, ...updatedArray];
         return list;
       });
-      setStateArray([...stateArray, inputText]);
+      setStateArray([...stateArray, stateObject]);
     } else if (e.target.name === "expAddBtn") {
       const updatedArray = ["newElement"];
       setExperienceArry(() => {
         const list = [...experienceArray, ...updatedArray];
         return list;
       });
+      setStateArray([...stateArray, stateObject]);
     }
   };
 
@@ -76,7 +65,6 @@ function App() {
         return list;
       });
     } else if (e.target.name === "expDeleteBtn") {
-      console.log("BUtton clicked");
       const tempArray = [...experienceArray];
       tempArray.pop();
       setExperienceArry(() => {
@@ -84,6 +72,16 @@ function App() {
         return list;
       });
     }
+  };
+
+  const imageChangeHandler = (e) => {
+    const reader = new FileReader();
+    reader.onload = () =>{
+      if(reader.readyState===2){
+        setImageUrl({profileImage : reader.result})
+      }
+    }
+    reader.readAsDataURL(e.target.files[0])
   };
 
   return (
@@ -94,10 +92,10 @@ function App() {
           path="/"
           element={
             <InputContainer
+              imageChangeHandler={imageChangeHandler}
               elementAddHandler={elementAddHandler}
               stateArray={stateArray}
               elementDeleteHandler={elementDeleteHandler}
-              inputText={inputText}
               onChangeHandler={onChangeHandler}
               educationArray={educationArray}
               experienceArray={experienceArray}
@@ -108,7 +106,7 @@ function App() {
           path="PreviewContainer"
           element={
             <PreviewContainer
-              inputText={inputText}
+              imageUrl={imageUrl}
               stateArray={stateArray}
               educationArray={educationArray}
               experienceArray={experienceArray}
